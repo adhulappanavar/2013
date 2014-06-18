@@ -1,0 +1,13 @@
+http://fr.slideshare.net/gnurag/workshop-learning-elasticsearch
+
+
+Learning ElasticSearch — Fifth Elephant 2013, Bangalore. Anurag Patel Red Hat
+2. http://xinh.org/5el Also available at
+
+43. (Lab) Analyzing Aadhaar's Datasets
+44. Download Public Dataset Download from Aadhaar Public Data Portal at https://data.uidai.gov.in
+45. Download Tools $ git clone https://github.com/gnurag/aadhaar
+46. Prepare Data & Configure # gem install yajl-ruby tire activesupport $ git clone https://github.com/gnurag/aadhaar $ cd aadhaar/data $ unzip UIDAI-ENR-DETAIL-20121001.zip $ cd ../bin $ vi aadhaar.rb
+47. Configuration AADHAAR_DATA_DIR = "/path/to/aadhaar/data" ES_URL = "http://localhost:9200" ES_INDEX = 'aadhaar' ES_TYPE = "UID" BATCH_SIZE = 1000
+48. Index $ ruby aadhaar.rb
+49. Running Examples $ curl -XPOST http://localhost:9200/aadhaar/UID/_search -d @template.json | python -mjson.tool

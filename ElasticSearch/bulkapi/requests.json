@@ -1,0 +1,7 @@
+{ "index" : { "_index" : "test", "_type" : "type1", "_id" : "1" } }
+{ "field1" : "test_type1_1_value1" }
+{ "delete" : { "_index" : "test", "_type" : "type1", "_id" : "2" } }
+{ "create" : { "_index" : "test", "_type" : "type1", "_id" : "3" } }
+{ "field1" : "test_type1_3_value3" }
+{ "update" : {"_id" : "1", "_type" : "type1", "_index" : "index1"} }
+{ "doc" : {"field2" : "index1docvalue2"} }
